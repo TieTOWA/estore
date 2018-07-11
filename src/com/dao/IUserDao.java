@@ -9,7 +9,7 @@ public interface IUserDao {
 	//插入用户
 	public void insertUser(User user) throws UserException;
 	//根据id修改用户信息
-	public void modifyById(int id) throws UserException;
+	public void modifyById(int id, User user) throws UserException;
 	//根据id删除用户
 	public void deleteById(int id) throws UserException;
 	//根据名字删除用户

@@ -13,7 +13,7 @@
 	<div class="container2">
     	<div class="header2">
         	<div>
-            	<a href="index.html"><img class="logo" src="images/logon_register.png"></a>
+            	<a href="index.jsp"><img class="logo" src="images/logon_register.png"></a>
             </div>
             <div>
             	<ul class="tabs">
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="content2">
-        <form id="register" action="" method="post">
+        <form id="register" action="Register" method="post">
 			<ul class="reg_box">
             	<li>
                 	<span><b>*</b>用户名：</span>
@@ -94,7 +94,6 @@
             return false;
         }
         $.ajax({
-            url:"Register",
             method:"post",
             dataType:"text",
             async:true,

@@ -31,7 +31,7 @@ public class User {
 	private Set<ShopCatItem> cartItem;
 	/*用户关注的降价通知商品项*/
 	private Set<Reduce> reduces;
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
@@ -100,6 +100,22 @@ public class User {
 	
 	public User() {
 		super();
+	}
+	/**
+	 * 
+	 * @param password
+	 * @param zip
+	 * @param address
+	 * @param phone
+	 * @param email
+	 */
+	public User(String password, String zip, String address, String phone, String email) {
+		super();
+		this.password = password;
+		this.zip = zip;
+		this.address = address;
+		this.phone = phone;
+		this.email = email;
 	}
 	/**
 	 * 

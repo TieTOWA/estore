@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/icons.css" />
 <link rel="stylesheet" href="css/table.css" />
 <link rel="stylesheet" href="css/newmain.css" />
+<script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<!--顶部-->
@@ -71,45 +72,45 @@
     				<h3>个人信息</h3>
     			</div>
     			<div class="security">
-    				<form action="">
+    				<form id="form" action="Update" method="post">
     					<ul class="list">
     						<li>
-    								<input id="J_euserName" class="long" name="txtUser" readonly="readonly" value="${user.getUsername()}" type="text" />
+    								<input id="name" class="long" name="name" readonly="readonly" value="${user.getUsername()}" type="text" />
     								<div class="name">用户名:</div>
     								<span id="J_eUserNameTipImg" class="icon"></span>
     								<div id="J_eUserNameTipInfo" class="ltip"></div>
     								<span class="placeholder" style="position: absolute;z-index: 20;color: rgb(153,153,153);top: 14px;left: 345px;line-height: 37px;"></span>
     						</li>
     						<li>
-    								<input id="J_euserName" class="long" name="txtUser" value="" type="password" />
+    								<input id="password" class="long" name="password" value="${user.getPassword()}" type="password" />
     								<div class="name">密码:</div>
     								<span id="J_eUserNameTipImg" class="icon"></span>
     								<div id="J_eUserNameTipInfo" class="ltip"></div>
     								<span class="placeholder" style="position: absolute;z-index: 20;color: rgb(153,153,153);top: 14px;left: 345px;line-height: 37px;"></span>
     						</li>
     						<li>
-    								<input id="J_euserName" class="long" name="txtUser" value="${user.getZip()}" type="text" />
+    								<input id="zip" class="long" name="zip" value="${user.getZip()}" type="text" />
     								<div class="name">邮编:</div>
     								<span id="J_eUserNameTipImg" class="icon"></span>
     								<div id="J_eUserNameTipInfo" class="ltip"></div>
     								<span class="placeholder" style="position: absolute;z-index: 20;color: rgb(153,153,153);top: 14px;left: 345px;line-height: 37px;"></span>
     						</li>
     						<li>
-    								<input id="J_euserName" class="long" name="txtUser" value="${user.getAddress()}" type="text" />
+    								<input id="address" class="long" name="address" value="${user.getAddress()}" type="text" />
     								<div class="name">地址:</div>
     								<span id="J_eUserNameTipImg" class="icon"></span>
     								<div id="J_eUserNameTipInfo" class="ltip"></div>
     								<span class="placeholder" style="position: absolute;z-index: 20;color: rgb(153,153,153);top: 14px;left: 345px;line-height: 37px;"></span>
     						</li>
     						<li>
-    								<input id="J_euserName" class="long" name="txtUser" value="${user.getPhone()}" type="text" />
+    								<input id="phone" class="long" name="phone" value="${user.getPhone()}" type="text" />
     								<div class="name">电话:</div>
     								<span id="J_eUserNameTipImg" class="icon"></span>
     								<div id="J_eUserNameTipInfo" class="ltip"></div>
     								<span class="placeholder" style="position: absolute;z-index: 20;color: rgb(153,153,153);top: 14px;left: 345px;line-height: 37px;"></span>
     						</li>
     						<li>
-    								<input id="J_euserName" class="long" name="txtUser" value="${user.getEmail()}" type="text" />
+    								<input id="email" class="long" name="email" value="${user.getEmail()}" type="text" />
     								<div class="name">电子邮箱:</div>
     								<span id="J_eUserNameTipImg" class="icon"></span>
     								<div id="J_eUserNameTipInfo" class="ltip"></div>
@@ -122,9 +123,25 @@
     								<div id="J_eUserNameTipInfo" class="ltip"></div>
     								<span class="placeholder" style="position: absolute;z-index: 20;color: rgb(153,153,153);top: 14px;left: 345px;line-height: 37px;"></span>
     						</li>
-    						
     					</ul>
-    				</form>
+                    </form>
+                    <script>
+                        $('#register').bind('submit',function(){
+                            $.ajax({
+                                
+                                method:"post",
+                                dataType:"text",
+                                async:true,
+                                data:{
+                                    'password':$('#name').val(),
+                                    'zip':$('#zip').val(),
+                                    'address':$('#address').val(),
+                                    'phone':$('#phone').val(),
+                                    'email':$('#email').val(),
+                                }
+                            });
+                        });
+                    </script>
     			</div>
     	</div>
     </div>

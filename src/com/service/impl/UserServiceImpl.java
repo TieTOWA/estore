@@ -45,9 +45,13 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public void updateUserInfo(User user) throws UserException {
-		// TODO Auto-generated method stub
-		
+	public User updateUserInfo(User user) throws UserException {
+		IUserDao userDao = new UserDaoImpl();
+		System.out.println(user.getUsername());
+		User user2 = userDao.selectByName(user.getUsername());
+		user.setId(user2.getId());
+		userDao.modifyById(user.getId(), user);
+		return user;
 	}
 
 }

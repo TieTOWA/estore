@@ -1,6 +1,4 @@
 package com.dao.impl;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +18,10 @@ public class UserDaoImpl extends BaseDao implements IUserDao{
 	public User selectByName(String name) throws UserException {
 		BaseDao baseDao = new BaseDao();
 		String sql = "select * from s_user where username = ?";
-		List<User> list = baseDao.find(sql, new Object[] {name}, User.class);
+		Object[] param = {
+			name
+		};
+		List<User> list = baseDao.find(sql, param, User.class);
 		User user = list.get(0);
 		return user;
 	}
@@ -36,7 +37,16 @@ public class UserDaoImpl extends BaseDao implements IUserDao{
 		Date date = new Date();
 		user.setDob(date);
 		String sql = "insert into s_user(username,password,zip,address,phone,email,dob) values(?,?,?,?,?,?,?)";
-		int row = baseDao.executeUpdate(sql, new Object[] {user.getUsername(),user.getPassword(),user.getZip(),user.getAddress(),user.getPhone(),user.getEmail(),user.getDob()});
+		Object[] param = {
+			user.getUsername(),
+			user.getPassword(),
+			user.getZip(),
+			user.getAddress(),
+			user.getPhone(),
+			user.getEmail(),
+			user.getDob()	
+		};
+		int row = baseDao.executeUpdate(sql, param);
 	}
 	
 	/**未完成
@@ -45,10 +55,17 @@ public class UserDaoImpl extends BaseDao implements IUserDao{
 	 * @return void
 	 */
 	@Override
-	public void modifyById(int id) throws UserException {
-//		BaseDao baseDao = new BaseDao();
-//		String sql = "update s_user set username=?,password=?,zip=?,address=?,phone=?,email=? where id = "+id+"";
-//		baseDao.executeUpdate(sql, new Object[] {});
+	public void modifyById(int id,User user) throws UserException {
+		BaseDao baseDao = new BaseDao();
+		String sql = "update s_user set password=?,zip=?,address=?,phone=?,email=? where id = "+id+"";
+		Object[] param = {
+				user.getPassword(),
+				user.getZip(),
+				user.getAddress(),
+				user.getPhone(),
+				user.getEmail()
+		};
+		baseDao.executeUpdate(sql, param);
 	}
 	
 	/**

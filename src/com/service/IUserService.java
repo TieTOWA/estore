@@ -31,6 +31,6 @@ public interface IUserService {
 	/**
 	 * 修改用户信息
 	 * */
-	public void updateUserInfo(User user) throws UserException;
+	public User updateUserInfo(User user) throws UserException;
 	
 }
