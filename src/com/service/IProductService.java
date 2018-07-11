@@ -17,21 +17,30 @@ public interface IProductService {
 	/**
 	 * 根据一级菜单ID获取商品
 	 * */
-	public List<Product> listProductByCategoryId(long id) throws ProductException;
+	public List<Product> listProductByCategoryId(int id) throws ProductException;
+	
 	/**
 	 * 根据二级菜单ID获取商品
 	 * */
-	public List<Product> listProductByCategoryDetailId(long id) throws ProductException;
+	public List<Product> listProductByCategoryDetailId(int id) throws ProductException;
+	
 	/**
 	 * 获取出版社信息
 	 * */
 	public Set<String> listPublish() throws ProductException;
+	
 	/**
 	 * 根据商品ID获取商品信息
 	 * */
-	public Product getProductById(long id) throws ProductException;
+	public Product getProductById(int id) throws ProductException;
+	
 	/**
 	 * 根据商品ID获取类别信息
 	 * */
-	public List<String> getCateInfoByProductId(long id)  throws ProductException;
+	public List<String> getCateInfoByProductId(int id)  throws ProductException;
+	
+	/**
+	 * 获取所有商品
+	 */
+	public List<Product> listAllProduct() throws ProductException;
 }

@@ -23,7 +23,6 @@ public class Update extends HttpServlet {
 		String address = request.getParameter("address");
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
-		System.out.println(name+password+zip+address+phone+email);
 		User user = new User(name, password, zip, address, phone, email);
 		IUserService userService = new UserServiceImpl();
 		try {
@@ -31,7 +30,6 @@ public class Update extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 		} catch (UserException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

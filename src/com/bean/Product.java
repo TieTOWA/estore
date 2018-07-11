@@ -3,11 +3,9 @@ package com.bean;
 import java.util.Set;
 /**
  * 产品
- * @author briup
- *
  */
 public class Product {
-	private long id;
+	private int id;
 	/*书的名字*/
 	private String name;
 	/*书的价钱*/
@@ -41,7 +39,7 @@ public class Product {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
