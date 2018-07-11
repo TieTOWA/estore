@@ -3,8 +3,6 @@ package com.bean;
 import java.util.Date;
 /**
  * 简报
- * @author briup
- *
  */
 public class Report {
 	private long id;

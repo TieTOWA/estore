@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.Set;
 /**
  * 订单
- * @author briup
- *
  */
 public class Order {
 	private long id;

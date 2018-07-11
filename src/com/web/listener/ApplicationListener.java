@@ -10,9 +10,13 @@ import javax.servlet.annotation.WebListener;
 import org.apache.catalina.startup.Tomcat;
 
 import com.bean.Product;
+import com.bean.Report;
 import com.common.exception.ProductException;
+import com.common.exception.ReportException;
 import com.service.IProductService;
+import com.service.IReportService;
 import com.service.impl.ProductServiceImpl;
+import com.service.impl.ReportServiceImpl;
 
 @WebListener
 public class ApplicationListener implements ServletContextListener {
@@ -37,12 +41,18 @@ public class ApplicationListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce)  { 
          System.out.print("Tomcat init");
          IProductService productService = new ProductServiceImpl();
+         IReportService reportService = new ReportServiceImpl();
          try {
-			List<Product> list = productService.listAllProduct();
+			List<Product> list1 = productService.listAllProduct();
+			List<Report> list2 = reportService.listReport();
 			ServletContext application;
 			application = sce.getServletContext();
-			application.setAttribute("allProducts", list);
+			application.setAttribute("allProducts", list1);
+			application.setAttribute("reports", list2);
 		} catch (ProductException e) {
+			e.printStackTrace();
+		} catch (ReportException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }

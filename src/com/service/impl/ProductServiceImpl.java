@@ -17,7 +17,6 @@ public class ProductServiceImpl implements IProductService {
 		String sql = "select * from s_product";
 		Object[] params = {};
 		List<Product> list = baseDao.find(sql, params, Product.class);
-		System.out.println(list.get(0).getId()+"all");
 		return list;
 	}
 

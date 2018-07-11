@@ -1,5 +1,7 @@
 package com.dao;
 
-public interface ICategoryDao {
+import com.bean.Category;
 
+public interface ICategoryDao {
+	
 }

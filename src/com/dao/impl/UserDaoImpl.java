@@ -49,7 +49,7 @@ public class UserDaoImpl extends BaseDao implements IUserDao{
 		int row = baseDao.executeUpdate(sql, param);
 	}
 	
-	/**未完成
+	/**
 	 * 根据id修改用户信息
 	 * @param id
 	 * @return void

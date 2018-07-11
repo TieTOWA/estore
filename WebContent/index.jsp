@@ -146,8 +146,9 @@
             <div class="c3_b1_right">
             	<h1>杰普快报</h1>
             	<ul>
-                	<li><a href="detail.jsp">〈加措〉相信这一切都是对我们最好的安排  </a></li>
-                	<li><a href="detail.jsp">〈加措〉相信这一切都是对我们最好的安排  </a></li>
+            		<c:forEach items="${reports}" var="report">
+            			<li><a href="detail.jsp">${report.name}</a></li>
+            		</c:forEach>
                 </ul>
             </div>
             <div style="clear:both"></div>

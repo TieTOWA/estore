@@ -1,7 +1,6 @@
 package com.bean;
 /**
  * 价格大小分段的类
- * @author briup
  */
 public class PriceScope {
 	private long id;

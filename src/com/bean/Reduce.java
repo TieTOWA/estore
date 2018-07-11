@@ -1,8 +1,6 @@
 package com.bean;
 /**
  * 降价通知
- * @author briup
- *
  */
 public class Reduce {
 	private long id;
