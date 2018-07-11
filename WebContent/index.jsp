@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -133,18 +134,12 @@
                 </div>
                 <div class="c3_b1_c_bottom">
                     <ul>
-                        <li>
-                           <a href="viewBook.jsp"><img src="images/p01.png"/></a>
-                           <a href="viewBook.jsp">Java从入门到精通</a>  
-                        </li>
-                       <li>
-                           <a href="viewBook.jsp"><img src="images/p01.png"/></a> 
-                           <a href="viewBook.jsp">Java从入门到精通</a> 
-                        </li>
-                        <li>
-                           <a href="viewBook.jsp"><img src="images/p01.png"/></a> 
-                           <a href="viewBook.jsp">Java从入门到精通</a> 
-                        </li>
+                        <c:forEach items="${allProducts}" var="product">
+	                        <li>
+	                           <a href="viewBookServlet?productId=${product.id}"><img style="width: 150px;height: 150px;" src="${product.img}"/></a>
+	                           <a href="viewBookServlet?productId=${product.id}">${product.name}</a>  
+	                        </li>
+                        </c:forEach>
                     </ul>
             	</div>
             </div>

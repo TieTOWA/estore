@@ -14,10 +14,6 @@ import com.common.exception.ProductException;
 import com.service.IProductService;
 import com.service.impl.ProductServiceImpl;
 
-/**
- * Application Lifecycle Listener implementation class ApplicationListener
- *
- */
 @WebListener
 public class ApplicationListener implements ServletContextListener {
 
