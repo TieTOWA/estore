@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -252,50 +253,29 @@ input{
 		</div>
 	</div>
 	<div class="c_book">
-		<div class="row">
-			<div style="float: left" class="line">
-				<div style="margin-top: 30px" ><input type="checkbox"></div>
-				<div style="margin-left: 80px;">
-					<img src="images/1.png" style="float: left">
-					<span>Effective JAVA</span>
+		<c:forEach items="shopcarts" var="shopcart">
+			<div class="row">
+				<div style="float: left" class="line">
+					<div style="margin-top: 30px" ><input type="checkbox"></div>
+					<div style="margin-left: 80px;">
+						<img src="${shopcart.product.img}" style="float: left">
+						<span>${shopcart.product.name}</span>
+					</div>
+				</div>
+				<div style="float: right" class="row_right">
+					<div style="margin-right: 10px">￥${shopcart.product.price}元</div><!-- 单价 -->
+					<div>
+						<span class="jian">-</span>
+						<span><input type="text" class="val" value="1" style="text-align: center"></span>
+						<span class="sum">+</span>
+					</div>
+					<div class="price">￥66元</div><!-- 小结 -->
+					<div>
+						<a href="">删除</a>
+					</div>
 				</div>
 			</div>
-			<div style="float: right" class="row_right">
-				<div style="margin-right: 10px">￥61元</div><!-- 单价 -->
-				<div>
-					<span class="jian">-</span>
-					<span><input type="text" class="val" value="1" style="text-align: center"></span>
-					<span class="sum">+</span>
-				</div>
-				<div class="price">￥66元</div><!-- 小结 -->
-				<div>
-					<a href="">删除</a>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div style="float: left" class="line">
-				<div style="margin-top: 30px" ><input type="checkbox"></div>
-				<div style="margin-left: 80px;">
-					<img src="images/1.png" style="float: left">
-					<span>Effective JAVA</span>
-				</div>
-			</div>
-			<div style="float: right" class="row_right">
-				<div style="margin-right: 10px">￥61元</div><!-- 单价 -->
-				<div>
-					<span class="jian">-</span>
-					<span><input type="text" class="val" value="1" style="text-align: center"></span>
-					<span class="sum">+</span>
-				</div>
-				<div class="price">￥66元</div><!-- 小结 -->
-				<div>
-					<a href="">删除</a>
-				</div>
-			</div>
-		</div>
-		
-		
+		</c:forEach>
 	</div>
 </div>
 <div class="center_bottom">

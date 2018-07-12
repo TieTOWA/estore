@@ -11,12 +11,16 @@ import org.apache.catalina.startup.Tomcat;
 
 import com.bean.Product;
 import com.bean.Report;
+import com.bean.ShopCartItem;
+import com.bean.User;
 import com.common.exception.ProductException;
 import com.common.exception.ReportException;
 import com.service.IProductService;
 import com.service.IReportService;
+import com.service.IShopCartItemService;
 import com.service.impl.ProductServiceImpl;
 import com.service.impl.ReportServiceImpl;
+import com.service.impl.ShopCartItemServiceImpl;
 
 @WebListener
 public class ApplicationListener implements ServletContextListener {
@@ -42,9 +46,11 @@ public class ApplicationListener implements ServletContextListener {
          System.out.print("Tomcat init");
          IProductService productService = new ProductServiceImpl();
          IReportService reportService = new ReportServiceImpl();
+         IShopCartItemService shopCartItemService = new ShopCartItemServiceImpl();
          try {
 			List<Product> list1 = productService.listAllProduct();
 			List<Report> list2 = reportService.listAllReport();
+			List<ShopCartItem> list3 = shopCartItemService.listAllShopCartItem();
 			ServletContext application;
 			application = sce.getServletContext();
 			application.setAttribute("allProducts", list1);

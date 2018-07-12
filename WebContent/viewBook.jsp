@@ -42,10 +42,12 @@
             alert(bookname+"没库存了QAQ！！！请选择别的书吧！");
         }else{ 
             var productId = "${product.id}";
+            var productNum = $('#productNum').val();
             $.ajax({
                 url:"addShopCart",
                 data:{
-                    "remain":remain
+                    "productId":productId,
+                    "productNum":productNum,
                 },
                 success:function(data){
                     alert(data);
@@ -150,7 +152,7 @@
                     </div>
                     <div class="pro_buy">
                     	<div class="pro_buy_nums">
-                        	<input type="text" value="1"/>
+                        	<input id="productNum" type="text" value="1"/>
                             <dl>
                             	<dd id="add">+</dd>
                                 <dd id="minus">-</dd>

@@ -3,6 +3,7 @@ package com.bean;
  * 购物车商品项
  */
 public class ShopCartItem {
+	
 	private int id;
 	/*购物车商品项属于用户*/
 	private User user;
