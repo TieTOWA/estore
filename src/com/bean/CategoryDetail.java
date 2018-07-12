@@ -6,7 +6,7 @@ import java.util.Set;
  */
 
 public class CategoryDetail {
-	private long id;
+	private int id;
 	/*书小分类的名字*/
 	private String name;
 	/*书所属于的大的类型*/
@@ -16,7 +16,7 @@ public class CategoryDetail {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

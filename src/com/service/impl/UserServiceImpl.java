@@ -1,13 +1,10 @@
 package com.service.impl;
 
-import java.util.Date;
-
 import com.bean.User;
 import com.common.exception.UserException;
 import com.dao.IUserDao;
 import com.dao.impl.UserDaoImpl;
 import com.service.IUserService;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 
 public class UserServiceImpl implements IUserService {
 
@@ -20,6 +17,9 @@ public class UserServiceImpl implements IUserService {
 		userDao.insertUser(user);
 	}
 
+	/**
+	 * 登陆
+	 */
 	@Override
 	public User loginUser(String name, String password) throws UserException {
 		User user = getUserByName(name);
@@ -33,6 +33,9 @@ public class UserServiceImpl implements IUserService {
 		return user;
 	}
 
+	/**
+	 * 通过名字查找用户
+	 */
 	@Override
 	public User getUserByName(String name) throws UserException {
 		IUserDao userDao = new UserDaoImpl();
@@ -44,6 +47,9 @@ public class UserServiceImpl implements IUserService {
 		
 	}
 
+	/**
+	 * 更新用户信息
+	 */
 	@Override
 	public User updateUserInfo(User user) throws UserException {
 		IUserDao userDao = new UserDaoImpl();

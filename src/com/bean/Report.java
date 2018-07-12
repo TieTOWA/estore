@@ -5,7 +5,7 @@ import java.util.Date;
  * 简报
  */
 public class Report {
-	private long id;
+	private int id;
 	/*简报的名字*/
 	private String name;
 	/*简报的等级*/
@@ -18,10 +18,10 @@ public class Report {
 	private String publish_writer;
 	/*简报的内容*/
 	private String content;
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

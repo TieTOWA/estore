@@ -31,7 +31,6 @@ public class viewReport extends HttpServlet {
 			session.setAttribute("report", report);
 			response.sendRedirect("detail.jsp");
 		} catch (ReportException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

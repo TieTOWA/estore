@@ -7,11 +7,11 @@ public interface IShopCart {
 	
 	void addProduct(Product product) throws Exception;
 	
-	void removeProduct(Long productid) throws Exception;
+	void removeProduct(int productid) throws Exception;
 	
 	void removeAllProducts() throws Exception;
 	
-	void updateProduct(Long productid,Integer number) throws Exception;
+	void updateProduct(int productid,Integer number) throws Exception;
 	
 	BigDecimal getTotalPrice() throws Exception;
 	

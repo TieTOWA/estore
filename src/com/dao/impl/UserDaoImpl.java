@@ -1,7 +1,6 @@
 package com.dao.impl;
 import java.util.Date;
 import java.util.List;
-
 import com.bean.User;
 import com.common.exception.UserException;
 import com.dao.IUserDao;

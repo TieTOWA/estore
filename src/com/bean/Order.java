@@ -6,7 +6,7 @@ import java.util.Set;
  * 订单
  */
 public class Order {
-	private long id;
+	private int id;
 	/*订单编号*/
 	private String orderid;
 	/*订单状态 1表示支付 2表示未支付*/
@@ -28,7 +28,7 @@ public class Order {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getOrderid() {

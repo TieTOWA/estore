@@ -13,7 +13,7 @@ import com.common.exception.ProductException;
 import com.service.IProductService;
 import com.service.impl.ProductServiceImpl;
 
-@WebServlet("/viewBookServlet")
+@WebServlet("/viewBook")
 public class viewBookServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

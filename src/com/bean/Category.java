@@ -5,15 +5,15 @@ import java.util.Set;
  * 书的大分类
  */
 public class Category {
-	private long id;
+	private int id;
 	/*书的大类型名字*/
 	private String name;
 	/*书的大类型下包含的所有小类型*/
 	private Set<CategoryDetail> detail;
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {

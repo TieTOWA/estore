@@ -3,17 +3,17 @@ package com.bean;
  * 降价通知
  */
 public class Reduce {
-	private long id;
+	private int id;
 	/*降价所属的用户*/
 	private User user;
 	/*降价关注的产品*/
 	private Product product;
 	/*降价关注时的价钱*/
 	private double baseprice;
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public User getUser() {

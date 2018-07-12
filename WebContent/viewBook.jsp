@@ -18,7 +18,6 @@
 			var input = $(diva).find("input");
 			var value = Number(input.val())+1;
 			input.val(value);
-			
 		});
 		$("#minus").on("click",function(){
 			var diva = this.parentNode.parentNode;
@@ -37,9 +36,24 @@
 	});
 </script>
 <script type="text/javascript">
-function addShopCart(bookname){
-	alert(bookname+"  加入购物车成功!");
-}
+    function addShopCart(bookname){
+        var remain = "${product.remain}";
+        if(remain == 0){
+            alert(bookname+"没库存了QAQ！！！请选择别的书吧！");
+        }else{ 
+            var productId = "${product.id}";
+            $.ajax({
+                url:"addShopCart",
+                data:{
+                    "remain":remain
+                },
+                success:function(data){
+                    alert(data);
+                    // alert(bookname+" 加入购物车成功!");
+                }
+            });
+        }
+    }
 </script>
 
 </head>
@@ -100,13 +114,13 @@ function addShopCart(bookname){
             <div class="cn5_top_y center01">
             	<div class="cn5topy_1">
                 	<div class="cn5topy_imgview">
-                    	<img src="${product.img}"/>
+                    	<img src="${product.img.split('[#]')[0]}"/>
                         <ul class="cn5topy_imglist">
-                        	<li><a href="#"><img src="${product.img}"></a></li>
-                            <li class="current"><a href="#"><img src="${product.img}"></a></li>
-                            <li><a href="#"><img src="${product.img}"></a></li>
-                            <li><a href="#"><img src="${product.img}"></a></li>
-                            <li><a href="#"><img src="${product.img}"></a></li>
+                        	<li><a href="#"><img src="${product.img.split('[#]')[0]}"></a></li>
+                            <li class="current"><a href="#"><img src="${product.img.split('[#]')[0]}"></a></li>
+                            <li><a href="#"><img src="${product.img.split('[#]')[0]}"></a></li>
+                            <li><a href="#"><img src="${product.img.split('[#]')[0]}"></a></li>
+                            <li><a href="#"><img src="${product.img.split('[#]')[0]}"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -131,7 +145,7 @@ function addShopCart(bookname){
                     </div>
                     <div class="pro_ship">
                         <div>
-                        	<div class="pro_key fl">剩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;余：98</div>
+                        	<div class="pro_key fl">剩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;余：${product.remain}</div>
                         </div>
                     </div>
                     <div class="pro_buy">
@@ -142,7 +156,7 @@ function addShopCart(bookname){
                                 <dd id="minus">-</dd>
                             </dl>
                         </div>
-                        <div class="pro_addshop"> <a href="javascript:void(0)" onclick="addShopCart('当前书')">加入购物车 </a></div>
+                        <div class="pro_addshop"> <a href="javascript:void(0)" onclick="addShopCart('${product.name}')">加入购物车 </a></div>
                     </div>
                     
                 </div>
@@ -163,13 +177,13 @@ function addShopCart(bookname){
                         <div class="introduce_item">
                           <ul>
                         	<li>${product.name}</li>
-                            <li>商品编号：1002024</li>
+                            <li>商品编号：${product.id}</li>
                             <li class="fr"><a class="color_link1" href="#">更多参数>></a></li>
                           </ul>
                         </div>
                		</div>
                     <div class="intro_pics">
-                    	<img class="intro_pic" src="${product.img}">
+                    	<img class="intro_pic" src="${product.img.split('[#]')[0]}">
                     </div>
                 </div>
                 

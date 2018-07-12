@@ -31,7 +31,7 @@ public class Product {
 	/*书的上架时间*/
 	private int publishdate;
 	/*书从属的购物项*/
-	private Set<ShopCatItem> cartItems;
+	private Set<ShopCartItem> cartItems;
 	/*书的降价项*/
 	private Set<Reduce> reduces;
 	/*书的分类*/

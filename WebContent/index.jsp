@@ -136,8 +136,8 @@
                     <ul>
                         <c:forEach items="${allProducts}" var="product">
 	                        <li>
-	                           <a href="viewBookServlet?productId=${product.id}"><img style="width: 150px;height: 150px;" src="${product.img}"/></a>
-	                           <a href="viewBookServlet?productId=${product.id}">${product.name}</a>  
+	                           <a href="viewBook?productId=${product.id}"><img style="width: 150px;height: 150px;" src="${product.img}"/></a>
+	                           <a href="viewBook?productId=${product.id}">${product.name}</a>  
 	                        </li>
                         </c:forEach>
                     </ul>

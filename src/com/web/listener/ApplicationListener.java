@@ -52,7 +52,6 @@ public class ApplicationListener implements ServletContextListener {
 		} catch (ProductException e) {
 			e.printStackTrace();
 		} catch (ReportException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
     }

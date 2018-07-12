@@ -28,7 +28,7 @@ public class User {
 	/*用户所拥有的订单*/
 	private Set<Order> orders;
 	/*用户加入到购物车的所有商品项*/
-	private Set<ShopCatItem> cartItem;
+	private Set<ShopCartItem> cartItem;
 	/*用户关注的降价通知商品项*/
 	private Set<Reduce> reduces;
 	public int getId() {
@@ -85,10 +85,10 @@ public class User {
 	public void setOrders(Set<Order> orders) {
 		this.orders = orders;
 	}
-	public Set<ShopCatItem> getCartItem() {
+	public Set<ShopCartItem> getCartItem() {
 		return cartItem;
 	}
-	public void setCartItem(Set<ShopCatItem> cartItem) {
+	public void setCartItem(Set<ShopCartItem> cartItem) {
 		this.cartItem = cartItem;
 	}
 	public Set<Reduce> getReduces() {

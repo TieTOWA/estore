@@ -3,27 +3,27 @@ package com.bean;
  * 价格大小分段的类
  */
 public class PriceScope {
-	private long id;
+	private int id;
 	/*定格区间的最小值*/
-	private long min;
+	private int min;
 	/*定格区间的最大值*/
-	private long max;
-	public long getId() {
+	private int max;
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public long getMin() {
 		return min;
 	}
-	public void setMin(long min) {
+	public void setMin(int min) {
 		this.min = min;
 	}
 	public long getMax() {
 		return max;
 	}
-	public void setMax(long max) {
+	public void setMax(int max) {
 		this.max = max;
 	}
 }

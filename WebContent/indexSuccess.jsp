@@ -122,8 +122,8 @@
 					<ul>
 						<c:forEach items="${allProducts}" var="product">
 							<li>
-								<a href="viewBookServlet?productId=${product.id}"><img width="150px" height="150px" src="${product.img.split('[#]')[0]}" /></a>
-								<a href="viewBookServlet?productId=${product.id}">${product.name}</a>
+								<a href="viewBook?productId=${product.id}"><img width="150px" height="150px" src="${product.img.split('[#]')[0]}" /></a>
+								<a href="viewBook?productId=${product.id}">${product.name}</a>
 							</li>
 						</c:forEach>
 					</ul>

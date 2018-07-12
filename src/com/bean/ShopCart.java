@@ -13,12 +13,12 @@ public class ShopCart implements IShopCart {
 	 * 购物车存储在session会回，每一个用户登陆到服务器，服务器都会为
 	 * 每一个客户端分配一个session对象，session的有效时间30分钟
 	 */
-	private Map<Long,OrderLine> orderlines = new HashMap<Long,OrderLine>();
+	private Map<Integer,OrderLine> orderlines = new HashMap<Integer,OrderLine>();
 	
 	public void addProduct(Product product) throws Exception{
 		System.out.println("进入ShopCart的add()方法！");
 		int number = 1;
-		long id = product.getId();
+		int id = product.getId();
 		if(orderlines.containsKey(id)) {
 			OrderLine orderline = (OrderLine) orderlines.get(id);
 			number = orderline.getNum()+1;
@@ -57,14 +57,14 @@ public class ShopCart implements IShopCart {
 	}
 
 	@Override
-	public void removeProduct(Long productid) throws Exception {
+	public void removeProduct(int productid) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("进入ShopCart的removeProduct()方法！");
 		orderlines.remove(productid);
 	}
 
 	@Override
-	public void updateProduct(Long productid, Integer number) throws Exception {
+	public void updateProduct(int productid, Integer number) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("进入ShopCart的updateProduct()方法！");
 		OrderLine orderline = orderlines.get(productid);

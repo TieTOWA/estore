@@ -44,8 +44,11 @@ public class ReportServiceImpl implements IReportService {
 		String sql = "select * from s_report where id = ?";
 		Object[] params = {id};
 		List<Report> list = baseDao.find(sql, params, Report.class);
-		Report report = list.get(0);
-		return report;
+		if (list.size() != 0) {
+			return list.get(0);
+		}else {
+			return null;
+		}
 	}
 
 }

@@ -3,7 +3,7 @@ package com.bean;
  * 订单项
  */
 public class OrderLine {
-	private long id;
+	private int id;
 	/*订单的数量*/
 	private int num;
 	/* 订单项维护的产品 */
@@ -13,7 +13,7 @@ public class OrderLine {
 	public long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public int getNum() {

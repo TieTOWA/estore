@@ -37,7 +37,6 @@ public class Login extends HttpServlet {
 				//处理异常信息
 			}
 		} catch (UserException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

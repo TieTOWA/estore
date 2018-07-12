@@ -2,18 +2,18 @@ package com.bean;
 /**
  * 购物车商品项
  */
-public class ShopCatItem {
-	private long id;
+public class ShopCartItem {
+	private int id;
 	/*购物车商品项属于用户*/
 	private User user;
 	/*购物车商品项包含的产品*/
 	private Product product;
 	/*购物车商品项购买的数量*/
 	private int num;
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public User getUser() {
