@@ -36,7 +36,7 @@ public class Product {
 	private Set<Reduce> reduces;
 	/*书的分类*/
 	private CategoryDetail cate_detail;
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 	public void setId(int id) {

@@ -3,8 +3,6 @@ package com.bean;
 import java.util.Set;
 /**
  * 书的小分类
- * @author briup
- *
  */
 
 public class CategoryDetail {

@@ -1,8 +1,6 @@
 package com.bean;
 /**
  * 订单项
- * @author briup
- *
  */
 public class OrderLine {
 	private long id;

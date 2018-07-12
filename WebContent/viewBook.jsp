@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +10,7 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/icons.css" />
 <link rel="stylesheet" href="css/table.css" />
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$("#add").on("click",function(){
@@ -99,21 +100,21 @@ function addShopCart(bookname){
             <div class="cn5_top_y center01">
             	<div class="cn5topy_1">
                 	<div class="cn5topy_imgview">
-                    	<img src="images/viewBook.png"/>
+                    	<img src="${product.img}"/>
                         <ul class="cn5topy_imglist">
-                        	<li><a href="#"><img src="images/viewBook.png"></a></li>
-                            <li class="current"><a href="#"><img src="images/viewBook.png"></a></li>
-                            <li><a href="#"><img src="images/viewBook.png"></a></li>
-                            <li><a href="#"><img src="images/viewBook.png"></a></li>
-                            <li><a href="#"><img src="images/viewBook.png"></a></li>
+                        	<li><a href="#"><img src="${product.img}"></a></li>
+                            <li class="current"><a href="#"><img src="${product.img}"></a></li>
+                            <li><a href="#"><img src="${product.img}"></a></li>
+                            <li><a href="#"><img src="${product.img}"></a></li>
+                            <li><a href="#"><img src="${product.img}"></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="cn5topy_2">
-                	<h1 class="pro_title font15">Effective Java (中文版) 第2版</h1>
+                	<h1 class="pro_title font15">${product.name}</h1>
                     <div class="pro_price">
                             <div class="pro_price_x">
-                                <p> briup价：<b>￥69.00</b> <a href="#">(降价通知)</a></p>
+                                <p> 特价：<b>￥${product.price}</b> <a href="#">(降价通知)</a></p>
                             </div>
                             
                     </div>
@@ -161,14 +162,14 @@ function addShopCart(bookname){
               	<div class="c5_b2_right_1 box">
                         <div class="introduce_item">
                           <ul>
-                        	<li>商品名称：Effective Java (中文版) 第2版</li>
+                        	<li>${product.name}</li>
                             <li>商品编号：1002024</li>
                             <li class="fr"><a class="color_link1" href="#">更多参数>></a></li>
                           </ul>
                         </div>
                		</div>
                     <div class="intro_pics">
-                    	<img class="intro_pic" src="images/viewBook.png">
+                    	<img class="intro_pic" src="${product.img}">
                     </div>
                 </div>
                 

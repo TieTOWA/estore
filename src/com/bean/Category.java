@@ -3,8 +3,6 @@ package com.bean;
 import java.util.Set;
 /**
  * 书的大分类
- * @author briup
- *
  */
 public class Category {
 	private long id;

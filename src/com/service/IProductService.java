@@ -8,6 +8,11 @@ import com.common.exception.ProductException;
 
 
 public interface IProductService {
+	
+	/**
+	 * 获取所有商品
+	 */
+	public List<Product> listAllProduct() throws ProductException;
 
 	/**
 	 * 获取热卖商品
@@ -39,8 +44,5 @@ public interface IProductService {
 	 * */
 	public List<String> getCateInfoByProductId(int id)  throws ProductException;
 	
-	/**
-	 * 获取所有商品
-	 */
-	public List<Product> listAllProduct() throws ProductException;
+	
 }
