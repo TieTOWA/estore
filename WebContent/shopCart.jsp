@@ -253,7 +253,7 @@ input{
 		</div>
 	</div>
 	<div class="c_book">
-		<c:forEach items="shopcarts" var="shopcart">
+		<c:forEach items="ShopCartLists" var="shopcart">
 			<div class="row">
 				<div style="float: left" class="line">
 					<div style="margin-top: 30px" ><input type="checkbox"></div>

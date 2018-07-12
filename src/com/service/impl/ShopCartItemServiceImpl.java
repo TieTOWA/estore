@@ -70,12 +70,12 @@ public class ShopCartItemServiceImpl implements IShopCartItemService {
 	 * @return List<ShopCartItem>
 	 */
 	@Override
-	public List<ShopCartItem> listAllShopCartItem() {
+	public List<ShopCartItem> listAllShopCartItem(User user) {
 		BaseDao baseDao = new BaseDao();
-		String sql = "select ";
-		Object[] params = {};
-		baseDao.find(sql, params, ShopCartItem.class);
-		return null;
+		String sql = "select * from s_shopcart_item where user_id = ?";
+		Object[] params = {user.getId()};
+		List<ShopCartItem> items = baseDao.find(sql, params, ShopCartItem.class);
+		return items;
 	}
 
 }

@@ -17,9 +17,14 @@ public class LoginOut extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session=request.getSession();
-		session.invalidate();
-		response.sendRedirect("index.jsp");
+		HttpSession session=request.getSession(false);
+		if (session == null) {
+			response.sendRedirect("index.jsp");
+		}else {
+			session.removeAttribute("user");
+			session.invalidate();
+			response.sendRedirect("index.jsp");
+		}
 	}
 
 

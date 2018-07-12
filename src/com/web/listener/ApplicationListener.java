@@ -2,10 +2,12 @@ package com.web.listener;
 
 import java.util.List;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.startup.Tomcat;
 
@@ -50,7 +52,6 @@ public class ApplicationListener implements ServletContextListener {
          try {
 			List<Product> list1 = productService.listAllProduct();
 			List<Report> list2 = reportService.listAllReport();
-			List<ShopCartItem> list3 = shopCartItemService.listAllShopCartItem();
 			ServletContext application;
 			application = sce.getServletContext();
 			application.setAttribute("allProducts", list1);

@@ -20,7 +20,7 @@
             <div class="top_center">
                 <ul class="top_bars">
                     <li>
-                        <a href="LoginOut">退出</a>|</li>
+                        <a href="Loginout">退出</a>|</li>
                     <li>
                         <a href="confirmList.jsp">我的订单
                             <span class="jt_down"></span>

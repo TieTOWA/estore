@@ -17,5 +17,5 @@ public interface IShopCartItemService {
 	 * @param user
 	 * @return List<ShopCartItem>
 	 */
-	public List<ShopCartItem> listAllShopCartItem();
+	public List<ShopCartItem> listAllShopCartItem(User user);
 }

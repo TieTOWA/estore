@@ -19,7 +19,7 @@
 				<li><a>欢迎 ${sessionScope.user.getUsername()}</a></li>
 			</ul>
 			<ul class="top_bars">
-				<li><a href="index.jsp">退出</a>|</li>
+				<li><a href="Loginout">退出</a>|</li>
 				<li><a href="#">我的订单<span class="jt_down"></span></a>|</li>
 				<li><a href="#">关注杰普<span class="jt_down"></span></a>|</li>
 				<li><a href="#">网站导航<span class="jt_down"></span></a></li>
@@ -44,7 +44,7 @@
 				<a href="userinfo.jsp">个人信息</a> <span class="sj_down"></span>
 			</div>
 			<div class="tsc">
-				<a href="emptyCar.jsp">去购物车结算</a> <span class="sj_right"></span>
+				<a href="ShopCart">去购物车结算</a> <span class="sj_right"></span>
 			</div>
 		</div>
 	</div>

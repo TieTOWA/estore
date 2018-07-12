@@ -21,7 +21,7 @@
                 </ul>
             </div>
             <div class="tlg">
-            	已有账号 <a href="login.html">登陆</a>
+            	已有账号 <a href="login.jsp">登陆</a>
             </div>
         </div>
         <div class="content2">
