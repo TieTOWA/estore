@@ -20,7 +20,15 @@ public interface IReportService {
 	 * */
 	void delReport(Long reportId) throws ReportException;
 	/**
-	 * 列出公告
+	 * 列出所有公告
 	 * */
-	List<Report> listReport() throws ReportException;
+	List<Report> listAllReport() throws ReportException;
+	
+	/**
+	 * 根据id获取公告详情
+	 * @param id
+	 * @return Report
+	 * @throws ReportException
+	 */
+	Report listReport(int id) throws ReportException;
 }

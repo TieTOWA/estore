@@ -26,14 +26,26 @@ public class ReportServiceImpl implements IReportService {
 		// TODO Auto-generated method stub
 		
 	}
-
+	/**
+	 * 列出所有公告
+	 * */
 	@Override
-	public List<Report> listReport() throws ReportException {
+	public List<Report> listAllReport() throws ReportException {
 		BaseDao baseDao = new BaseDao();
 		String sql = "select * from s_report";
 		Object[] params = {};
 		List<Report> list = baseDao.find(sql, params, Report.class);
 		return list;
+	}
+
+	@Override
+	public Report listReport(int id) throws ReportException {
+		BaseDao baseDao = new BaseDao();
+		String sql = "select * from s_report where id = ?";
+		Object[] params = {id};
+		List<Report> list = baseDao.find(sql, params, Report.class);
+		Report report = list.get(0);
+		return report;
 	}
 
 }

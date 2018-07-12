@@ -147,7 +147,7 @@
             	<h1>杰普快报</h1>
             	<ul>
             		<c:forEach items="${reports}" var="report">
-            			<li><a href="detail.jsp">${report.name}</a></li>
+            			<li><a href="viewReport?reportId=${report.id}">${report.name}</a></li>
             		</c:forEach>
                 </ul>
             </div>

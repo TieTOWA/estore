@@ -44,7 +44,7 @@ public class ApplicationListener implements ServletContextListener {
          IReportService reportService = new ReportServiceImpl();
          try {
 			List<Product> list1 = productService.listAllProduct();
-			List<Report> list2 = reportService.listReport();
+			List<Report> list2 = reportService.listAllReport();
 			ServletContext application;
 			application = sce.getServletContext();
 			application.setAttribute("allProducts", list1);
