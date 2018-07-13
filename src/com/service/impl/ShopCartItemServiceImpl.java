@@ -72,10 +72,11 @@ public class ShopCartItemServiceImpl implements IShopCartItemService {
 	@Override
 	public List<ShopCartItem> listAllShopCartItem(User user) {
 		BaseDao baseDao = new BaseDao();
+		//查询的为id,user_id,product_id,num
 		String sql = "select * from s_shopcart_item where user_id = ?";
 		Object[] params = {user.getId()};
-		List<ShopCartItem> items = baseDao.find(sql, params, ShopCartItem.class);
-		return items;
+		List<ShopCartItem> list = baseDao.find(sql, params, ShopCartItem.class);
+		return list;
 	}
 
 }

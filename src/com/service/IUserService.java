@@ -11,7 +11,7 @@ public interface IUserService {
 	 * @param user
 	 * @throws UserException
 	 */
-	public void registerUser(User user) throws UserException;
+	public boolean registerUser(User user) throws UserException;
 	
 	/**
 	 * 用户登陆
@@ -33,4 +33,8 @@ public interface IUserService {
 	 * */
 	public User updateUserInfo(User user) throws UserException;
 	
+	/**
+	 * 检测用户信息
+	 */
+	public boolean checkUser(User user) throws UserException;
 }

@@ -447,6 +447,8 @@ span.pwd_icon{
 }
 .c3_b1_c_bottom ul li{
 	float:left;
+	width:208px;
+	height:203px;
 }
 
 .c3_b1_c_bottom ul li a+a{

@@ -12,9 +12,14 @@ public class UserServiceImpl implements IUserService {
 	 * 注册操作
 	 */
 	@Override
-	public void registerUser(User user) throws UserException {
+	public boolean registerUser(User user) throws UserException {
 		IUserDao userDao = new UserDaoImpl();
-		userDao.insertUser(user);
+		int row = userDao.insertUser(user);
+		if (row != 0) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	/**
@@ -58,6 +63,30 @@ public class UserServiceImpl implements IUserService {
 		user.setId(user2.getId());
 		userDao.modifyById(user.getId(), user);
 		return user;
+	}
+
+	/**
+	 * 检测用户信息
+	 */
+	@Override
+	public boolean checkUser(User user) throws UserException {
+		if (user.getUsername() == null || user.getUsername() == "") {
+			System.out.println(user.getUsername());
+			return false;
+		}else if (user.getPassword() == null || user.getPassword() == "") {
+			System.out.println(user.getPassword());
+			return false;
+		}else if (user.getZip() == null || user.getZip() == "") {
+			return false;
+		}else if (user.getAddress() == null || user.getAddress() == "") {
+			return false;
+		}else if (user.getPhone() == null || user.getPhone() == "") {
+			return false;
+		}else if (user.getEmail() == null || user.getEmail() == "") {
+			return false;
+		}else {
+			return true;
+		}
 	}
 
 }

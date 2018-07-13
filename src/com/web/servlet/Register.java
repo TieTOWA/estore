@@ -29,10 +29,19 @@ public class Register extends HttpServlet {
 		String address = request.getParameter("address");
 		String telephone = request.getParameter("telephone");
 		String email = request.getParameter("email");
+		System.out.println("servlet"+name);
+		System.out.println("servlet"+password);
 		User user = new User(name,password,zip,address,telephone,email);
 		IUserService userService = new UserServiceImpl();
 		try {
-			userService.registerUser(user);
+			boolean flag = userService.checkUser(user);
+			if (flag) {
+				userService.registerUser(user);
+				response.sendRedirect("index.jsp");
+			}else {
+				response.setContentType("text/html;charset=utf-8");
+				response.getWriter().print("<script language='javascript'>alert('你有一项没填写哦QAQ');window.location.href='register.jsp';</script>");
+			}
 		} catch (UserException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

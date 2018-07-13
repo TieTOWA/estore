@@ -8,8 +8,10 @@
 <link rel="stylesheet" href="css/common.css"/>
 <link rel="stylesheet" href="css/style.css" />
 <script src="js/jquery-3.2.1.min.js"></script>
+
 </head>
 <body>
+        
 	<div class="container2">
     	<div class="header2">
         	<div>
@@ -25,7 +27,7 @@
             </div>
         </div>
         <div class="content2">
-        <form id="register" action="Register" method="post">
+        <form id="register" method="POST" action="Register">
 			<ul class="reg_box">
             	<li>
                 	<span><b>*</b>用户名：</span>
@@ -49,11 +51,11 @@
                 </li>
                 <li>
                 	<span><b>*</b>电子邮箱：</span>
-                    <input type="text" name="email" id="email"/>
+                    <input type="email" name="email" id="email"/>
                 </li>
             </ul>
 			<p>
-            	<input type="checkbox" checked/>
+            	<input type="checkbox"/>
                	 我已阅读并同意
                 <a href="#">用户注册协议</a>
             </p>
@@ -61,45 +63,5 @@
         </form>
         </div>
        </div>
-    <script>     
-       $('#register').bind('submit',function(){
-        var name = $('#name').val();
-        var password = $('password').val();
-        var zip = $('zip').val();
-        var address =  $('address').val();
-        var telephone = $('telephone').val();
-        var email = $('email').val();
-        if(name==''){
-            alert('请输入用户名！');
-            return false;
-        }
-        if(password==''){
-            alert('请输入密码！');
-            return false;
-        }
-        if(zip==''){
-            alert('请输入邮政编码！');
-            return false;
-        }
-        if(address==''){
-            alert('请输入地址！');
-            return false;
-        }
-        if(telephone==''){
-            alert('请输入电话号码！');
-            return false;
-        }
-        if(email==''){
-            alert('请输入邮箱！');
-            return false;
-        }
-        $.ajax({
-            method:"post",
-            dataType:"text",
-            async:true,
-            data:$('#register').serialize(),
-        });
-    });
-</script>
 </body>
 </html>

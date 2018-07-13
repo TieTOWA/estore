@@ -258,12 +258,12 @@ input{
 				<div style="float: left" class="line">
 					<div style="margin-top: 30px" ><input type="checkbox"></div>
 					<div style="margin-left: 80px;">
-						<img src="${shopcart.product.img}" style="float: left">
-						<span>${shopcart.product.name}</span>
+						<img src="${shopcart.product}" style="float: left">
+						<span>${shopcart.product}</span>
 					</div>
 				</div>
 				<div style="float: right" class="row_right">
-					<div style="margin-right: 10px">￥${shopcart.product.price}元</div><!-- 单价 -->
+					<div style="margin-right: 10px">￥${shopcart.product}元</div><!-- 单价 -->
 					<div>
 						<span class="jian">-</span>
 						<span><input type="text" class="val" value="1" style="text-align: center"></span>

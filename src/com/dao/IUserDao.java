@@ -7,7 +7,7 @@ public interface IUserDao {
 	//根据名字查询用户
 	public User selectByName(String name) throws UserException;
 	//插入用户
-	public void insertUser(User user) throws UserException;
+	public int insertUser(User user) throws UserException;
 	//根据id修改用户信息
 	public void modifyById(int id, User user) throws UserException;
 	//根据id删除用户

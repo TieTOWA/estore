@@ -31,7 +31,7 @@ public class UserDaoImpl extends BaseDao implements IUserDao{
 	 * @return void
 	 */
 	@Override
-	public void insertUser(User user) throws UserException {
+	public int insertUser(User user) throws UserException {
 		BaseDao baseDao = new BaseDao();
 		Date date = new Date();
 		user.setDob(date);
@@ -46,6 +46,7 @@ public class UserDaoImpl extends BaseDao implements IUserDao{
 			user.getDob()	
 		};
 		int row = baseDao.executeUpdate(sql, param);
+		return row;
 	}
 	
 	/**
