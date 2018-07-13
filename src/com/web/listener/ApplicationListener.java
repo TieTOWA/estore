@@ -11,15 +11,18 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.startup.Tomcat;
 
+import com.bean.Category;
 import com.bean.Product;
 import com.bean.Report;
 import com.bean.ShopCartItem;
 import com.bean.User;
 import com.common.exception.ProductException;
 import com.common.exception.ReportException;
+import com.service.ICategoryService;
 import com.service.IProductService;
 import com.service.IReportService;
 import com.service.IShopCartItemService;
+import com.service.impl.CategoryServiceImpl;
 import com.service.impl.ProductServiceImpl;
 import com.service.impl.ReportServiceImpl;
 import com.service.impl.ShopCartItemServiceImpl;
@@ -48,14 +51,16 @@ public class ApplicationListener implements ServletContextListener {
          System.out.print("Tomcat init");
          IProductService productService = new ProductServiceImpl();
          IReportService reportService = new ReportServiceImpl();
-         IShopCartItemService shopCartItemService = new ShopCartItemServiceImpl();
+         ICategoryService categoryService = new CategoryServiceImpl();
          try {
-			List<Product> list1 = productService.listAllProduct();
-			List<Report> list2 = reportService.listAllReport();
+			List<Product> allProducts = productService.listAllProduct();
+			List<Report> reports = reportService.listAllReport();
+			List<Category> cates = categoryService.listCategory();
 			ServletContext application;
 			application = sce.getServletContext();
-			application.setAttribute("allProducts", list1);
-			application.setAttribute("reports", list2);
+			application.setAttribute("allProducts", allProducts);
+			application.setAttribute("reports", reports);
+			application.setAttribute("cates", cates);
 		} catch (ProductException e) {
 			e.printStackTrace();
 		} catch (ReportException e) {

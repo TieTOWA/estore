@@ -3,6 +3,8 @@ package com.service;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.taglibs.standard.lang.jstl.test.beans.PublicBean1;
+
 import com.bean.Product;
 import com.common.exception.ProductException;
 
@@ -17,7 +19,7 @@ public interface IProductService {
 	/**
 	 * 获取热卖商品
 	 * */
-	public List<Product> listHostProducet() throws ProductException;
+	public List<Product> listHotProducet() throws ProductException;
 	
 	/**
 	 * 根据一级菜单ID获取商品
@@ -43,6 +45,8 @@ public interface IProductService {
 	 * 根据商品ID获取类别信息
 	 * */
 	public List<String> getCateInfoByProductId(int id)  throws ProductException;
+
+	public List<Product> getProductByName(String name) throws ProductException;
 	
 	
 }

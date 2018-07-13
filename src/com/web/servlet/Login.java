@@ -33,11 +33,10 @@ public class Login extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("user", user);
 				response.sendRedirect("indexSuccess.jsp");
-			}else {
-				//处理异常信息
 			}
 		} catch (UserException e) {
-			e.printStackTrace();
+			response.setContentType("text/html;charset=utf-8");
+			response.getWriter().print("<script language='javascript'>alert('你有一项没填写哦QAQ');window.location.href='login.jsp';</script>");
 		}
 	}
 

@@ -30,13 +30,17 @@
 	<div class="header3">
 		<a href="#"><img src="images/logo.png"></a>
 		<div class="h3_center">
-			<div class="search_box">
-				<input type="text" /> <span>搜索</span>
+			<form action="searchSerlvet" method="post">
+        	<div class="search_box">
+            	
+				<input type="text" name="key" /> 
+				<input type="submit" value="搜索" style="background-color:white;width:100px;"/>
 			</div>
+		</form>
 			<p>
-				<a href="list.jsp">文学类</a>| <a href="list.jsp">教育类</a>| <a
-					href="list.jsp">计算机</a>| <a href="list.jsp">儿童类</a>| <a
-					href="list.jsp">漫画类</a>|
+				<c:forEach items="${cates}" var="cate">
+            		<a href="listServlet?cateId=${cate.id}">${cate.name}</a>|
+            	</c:forEach>
 			</p>
 		</div>
 		<div class="h3_right">
@@ -53,11 +57,9 @@
 		<div class="nav_top_center">
 			<div>全部图书分类</div>
 			<ul>
-				<li><a href="list.jsp">文学类</a></li>
-				<li><a href="list.jsp">教育类</a></li>
-				<li><a href="list.jsp">计算机</a></li>
-				<li><a href="list.jsp">儿童类</a></li>
-				<li><a href="list.jsp">漫画类</a></li>
+				<c:forEach items="${cates}" var="cate">
+            		<li><a href="listServlet?cateId=${cate.id}">${cate.name}</a></li>
+            	</c:forEach>
 			</ul>
 		</div>
 	</div>

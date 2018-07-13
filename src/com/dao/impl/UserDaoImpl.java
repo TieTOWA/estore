@@ -21,8 +21,12 @@ public class UserDaoImpl extends BaseDao implements IUserDao{
 			name
 		};
 		List<User> list = baseDao.find(sql, param, User.class);
-		User user = list.get(0);
-		return user;
+		if (list.size() != 0) {
+			User user = list.get(0);
+			return user;
+		}else {
+			return null;
+		}	
 	}
 	
 	/**

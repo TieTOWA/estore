@@ -49,7 +49,6 @@ public class UserServiceImpl implements IUserService {
 			return user;
 		}
 		return null;
-		
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/icons.css" />
 <link rel="stylesheet" href="css/table.css" />
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 	<!--顶部-->
@@ -30,12 +31,14 @@
     <div class="header3">
     	<a href="index.jsp"><img src="images/logo.png"></a>
     	<div class="h3_center">
-    	<form action="searchSerlvet" method="post">
+        	<div class="search_box">
+        	<form action="searchSerlvet" method="post">
         	<div class="search_box">
 				<input type="text" name="key" /> 
 				<input type="submit" value="搜索" style="background-color:white;width:100px;"/>
 			</div>
-		</form>
+		</form> 
+            </div>
             <p>
             	<c:forEach items="${cates}" var="cate">
             		<a href="listServlet?cateId=${cate.id}">${cate.name}</a>|
@@ -48,8 +51,8 @@
                 <span class="sj_down"></span>
              </div>
             <div class="tsc">
-           	  <a href="ShopCart">去购物车结算</a>
-              <span class="sj_right"></span>
+           	  <a href="emptyCar.jsp">去购物车结算</a>
+              <span class="sj_right"> </span>
             </div>
         </div>
     </div>
@@ -60,7 +63,7 @@
                 全部图书分类
             </div>
             <ul>
-            	<c:forEach items="${cates}" var="cate">
+                <c:forEach items="${cates}" var="cate">
             		<li><a href="listServlet?cateId=${cate.id}">${cate.name}</a></li>
             	</c:forEach>
             </ul>
@@ -127,16 +130,13 @@
                 </dl>
             </div>
             <div class="c3_b1_center">
-            	<div>
-                	<a href="viewBook.jsp"><img src="images/ad1.png"></a>
-                </div>
                 <div class="c3_b1_c_bottom">
                     <ul>
-                        <c:forEach items="${allProducts}" var="product">
-	                        <li>
-	                           <a href="viewBook?productId=${product.id}"><img style="width: 150px;height: 150px;" src="${product.img.split('[#]')[0]}"/></a>
-	                           <a href="viewBook?productId=${product.id}">${product.name}</a>  
-	                        </li>
+                    	<c:forEach items="${searchProducts }" var="sproduct">
+                        	<li>
+                           		<a href="viewBookServlet?productId=${sproduct.id}"><img width=150px hight=150px src="${sproduct.img.split('[#]')[0] }"/></a>
+                           		<a href="viewBookServlet?productId=${sproduct.id}">${sproduct.name}</a>  
+                        	</li>
                         </c:forEach>
                     </ul>
             	</div>
@@ -144,7 +144,7 @@
             <div class="c3_b1_right">
             	<h1>杰普快报</h1>
             	<ul>
-            		<c:forEach items="${reports}" var="report">
+                	<c:forEach items="${reports}" var="report">
             			<li><a href="viewReport?reportId=${report.id}">${report.name}</a></li>
             		</c:forEach>
                 </ul>
