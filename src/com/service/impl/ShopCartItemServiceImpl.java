@@ -7,10 +7,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.bean.ShopCartItem;
-import com.bean.User;
-import com.mysql.cj.protocol.Resultset;
 import com.service.IShopCartItemService;
 import com.utils.BaseDao;
+import com.web.view.ShopItemInfo;
 
 public class ShopCartItemServiceImpl implements IShopCartItemService {
 
@@ -66,17 +65,21 @@ public class ShopCartItemServiceImpl implements IShopCartItemService {
 
 	/**
 	 * 获取用户的购物车列表
-	 * @param user
+	 * @param userid
 	 * @return List<ShopCartItem>
 	 */
 	@Override
-	public List<ShopCartItem> listAllShopCartItem(User user) {
+	public List<ShopItemInfo> listItemByUserId(int uid) {
 		BaseDao baseDao = new BaseDao();
-		//查询的为id,user_id,product_id,num
-		String sql = "select * from s_shopcart_item where user_id = ?";
-		Object[] params = {user.getId()};
-		List<ShopCartItem> list = baseDao.find(sql, params, ShopCartItem.class);
+		String sql = "SELECT name,price,img,num,sc.id AS id " + 
+				"FROM s_product AS p,s_shopcart_item AS sc " + 
+				"WHERE p.id = sc.product_id AND sc.user_id = ?";
+		Object[] params = {
+				uid
+		};
+		List<ShopItemInfo> list = baseDao.find(sql, params, ShopItemInfo.class);
 		return list;
+		
 	}
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bean.ShopCartItem;
 import com.bean.User;
+import com.web.view.ShopItemInfo;
 
 public interface IShopCartItemService {
 	/**
@@ -15,7 +16,7 @@ public interface IShopCartItemService {
 	/**
 	 * 获取用户的购物车列表
 	 * @param user
-	 * @return List<ShopCartItem>
+	 * @return List<ShopItemInfo>
 	 */
-	public List<ShopCartItem> listAllShopCartItem(User user);
+	public List<ShopItemInfo> listItemByUserId(int uid);
 }

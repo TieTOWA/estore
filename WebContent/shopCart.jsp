@@ -253,23 +253,23 @@ input{
 		</div>
 	</div>
 	<div class="c_book">
-		<c:forEach items="ShopCartLists" var="shopcart">
+		<c:forEach items="${ShopCartLists}" var="shopcart">
 			<div class="row">
 				<div style="float: left" class="line">
 					<div style="margin-top: 30px" ><input type="checkbox"></div>
 					<div style="margin-left: 80px;">
-						<img src="${shopcart.product}" style="float: left">
-						<span>${shopcart.product}</span>
+						<img src="${shopcart.img.split('[#]')[0]}" style="float: left;width: 80px;height: 80px;">
+						<span>${shopcart.name}</span>
 					</div>
 				</div>
 				<div style="float: right" class="row_right">
-					<div style="margin-right: 10px">￥${shopcart.product}元</div><!-- 单价 -->
+					<div style="margin-right: 10px">￥${shopcart.price}元</div><!-- 单价 -->
 					<div>
 						<span class="jian">-</span>
-						<span><input type="text" class="val" value="1" style="text-align: center"></span>
+						<span><input type="text" class="val" value="${shopcart.num}" style="text-align: center"></span>
 						<span class="sum">+</span>
 					</div>
-					<div class="price">￥66元</div><!-- 小结 -->
+					<div class="price">￥${shopcart.price*shopcart.num}元</div><!-- 小结 -->
 					<div>
 						<a href="">删除</a>
 					</div>

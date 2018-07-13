@@ -48,8 +48,8 @@
                 <span class="sj_down"></span>
              </div>
             <div class="tsc">
-           	  <a href="emptyCar.jsp">去购物车结算</a>
-              <span class="sj_right"> </span>
+           	  <a href="ShopCart">去购物车结算</a>
+              <span class="sj_right"></span>
             </div>
         </div>
     </div>

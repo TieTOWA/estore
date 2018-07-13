@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="css/icons.css" />
 <link rel="stylesheet" href="css/table.css" />
 <link rel="stylesheet" href="css/newmain.css" />
+<link rel="stylesheet" href="css/verify.css" />
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/verify.min.js"></script>
 </head>
 <body>
 	<!--顶部-->
@@ -92,28 +95,17 @@
     				<form action="forgetPassword1.jsp" method="post">
     					<ul class="list">
     						<li>
-    								<input id="J_euserName" class="long" name="txtUser" value="" type="text" />
-    								<div class="name">用户名</div>
-    								<span id="J_eUserNameTipImg" class="icon"></span>
-    								<div id="J_eUserNameTipInfo" class="ltip"></div>
-    								<span class="placeholder" style="position: absolute;z-index: 20;color: rgb(153,153,153);top: 14px;left: 345px;line-height: 37px;">请输入用户名</span>
+    							<input id="name" name="user" value="" type="text" placeholder="请输入用户名"/>
+    							<div id="name" class="name">用户名</div>
     						</li>
     						<li>
-    						<div class="name">图形验证码:</div>
-    						<input id="J_eUserNameCode" name="txtVcode" maxlength="4"  style="margin-right: 6px;" type="text"/>
-    						<span class="code">
-    							<img id="J_imgVcode" title="点击更换验证码" src="" alt="点击更换验证码" height="38" width="85"/>
-    						</span>
-    						<a id="J_vcodeImgBtn" class="more" href="#">换一张</a>
-    						<div id="J_eUserNameCodeTipInfo" class="ltip"></div>
-    						</li>
-    						<li>
-    							<div class="name"></div>
-    							<input id="J_eUserNameSubmit" type="submit" value="下一步" class="btn_red">
-    							<!-- <a id="J_eUserNameSubmit" class="btn_red"  href="javascript:void(0);" onclick="return false">下一步</a> -->
+                                <div class="name">图形验证码:</div>
+                                <div id="mpanel2" >
+                                </div>
+                                <button type="button" id="check-btn" class="verify-btn" style="margin-left: 345px">确定</button>
     						</li>
     					</ul>
-    				</form>
+                    </form>
     			</div>
     	</div>
     </div>
@@ -183,6 +175,24 @@
           	<img src="images/police.png">
         </div>
     </div>
-
+    <script>
+        $('#mpanel2').codeVerify({
+            type : 1,
+            width : '224px',
+            height : '40px',
+            fontSize : '30px',
+            codeLength : 4,
+            btnId : 'check-btn',
+            ready : function() {
+            },
+            success : function() {
+                alert('验证匹配！');
+                window.location.href="forgetPassword1.jsp?name="+$('#name').val();
+            },
+            error : function() {
+                alert('验证码不匹配！');
+            }
+        });
+    </script>
 </body>
 </html>
