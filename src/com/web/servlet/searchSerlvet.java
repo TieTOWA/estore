@@ -19,6 +19,13 @@ import com.service.impl.ProductServiceImpl;
 @WebServlet("/searchSerlvet")
 public class searchSerlvet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+
+    public searchSerlvet() {
+        super();
+        
+    }
+
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name=(String)request.getParameter("key").trim();

@@ -51,6 +51,7 @@
                 },
                 success:function(data){
                     alert(data);
+                    // alert(bookname+" 加入购物车成功!");
                 }
             });
         }
@@ -85,7 +86,7 @@
                 <span class="sj_down"></span>
              </div>
             <div class="tsc">
-            	<a href="shopCart.jsp">去购物车结算</a>
+            	<a href="ShopCart">去购物车结算</a>
                 <span class="sj_right"></span>
             </div>
         </div>

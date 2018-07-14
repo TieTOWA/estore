@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/Loginout")
 public class LoginOut extends HttpServlet {
+
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession(false);
 		if (session == null) {
@@ -24,4 +26,7 @@ public class LoginOut extends HttpServlet {
 			response.sendRedirect("index.jsp");
 		}
 	}
+
+
+
 }
