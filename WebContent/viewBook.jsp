@@ -51,7 +51,6 @@
                 },
                 success:function(data){
                     alert(data);
-                    // alert(bookname+" 加入购物车成功!");
                 }
             });
         }

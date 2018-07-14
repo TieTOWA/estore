@@ -23,15 +23,15 @@ import com.service.impl.UserServiceImpl;
 public class Register extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//接收表单传递过来的信息
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
 		String zip = request.getParameter("zip");
 		String address = request.getParameter("address");
 		String telephone = request.getParameter("telephone");
 		String email = request.getParameter("email");
-		System.out.println("servlet"+name);
-		System.out.println("servlet"+password);
 		User user = new User(name,password,zip,address,telephone,email);
+		//调用Service层代码
 		IUserService userService = new UserServiceImpl();
 		try {
 			boolean flag = userService.checkUser(user);
@@ -43,7 +43,6 @@ public class Register extends HttpServlet {
 				response.getWriter().print("<script language='javascript'>alert('你有一项没填写哦QAQ');window.location.href='register.jsp';</script>");
 			}
 		} catch (UserException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

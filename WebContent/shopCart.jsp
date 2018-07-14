@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/icons.css" />
 <link rel="stylesheet" href="css/table.css" />
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 
 <style type="text/css">
 a{

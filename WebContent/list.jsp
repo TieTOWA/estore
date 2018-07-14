@@ -66,7 +66,23 @@
 	});
 
 	function addShopCart(bookName) {
-		alert(bookName + "加入购物车成功");
+		var remain = "${product.remain}";
+        if(remain == 0){
+            alert(bookname+"没库存了QAQ！！！请选择别的书吧！");
+        }else{ 
+            var productId = "${product.id}";
+            var productNum = $('#productNum').val();
+            $.ajax({
+                url:"addShopCart",
+                data:{
+                    "productId":productId,
+                    "productNum":productNum,
+                },
+                success:function(data){
+                    alert(data);
+                }
+            });
+        }
 	}
 </script>
 </head>
@@ -124,7 +140,7 @@
 								活动价：<b>￥${hot.price}</b>
 							</h1>
 							<h2>
-								<a href="#">立即抢购</a>
+								<a href="javascript:void(0)" onclick="addShopCart('${product.name}')">立即抢购</a>
 							</h2>
 						</div></li>
 				</c:forEach>
@@ -204,7 +220,7 @@
 							<ul class="c4b5_option">
 								<li class="shopcar_box">
 									<span class="shopcar01"></span>
-									<a href="javascript:void(0)" onclick="addShopCart('book-1')">加入购物车</a>
+									<a href="javascript:void(0)" onclick="addShopCart('${product.name}')">加入购物车</a>
 								</li>
 							</ul>
 						</li>

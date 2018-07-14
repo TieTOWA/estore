@@ -2,13 +2,9 @@ package com.service.impl;
 
 import java.util.List;
 import java.util.Set;
-
-import org.apache.catalina.realm.NestedCredentialHandler;
-
 import com.bean.Product;
 import com.common.exception.ProductException;
 import com.service.IProductService;
-import com.sun.org.apache.regexp.internal.recompile;
 import com.utils.BaseDao;
 
 public class ProductServiceImpl implements IProductService {
